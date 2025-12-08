@@ -123,6 +123,11 @@
   --color-fanatisch-red: var(--fanatisch-red);
 }
 
+.font-lufga {
+  font-family: var(--font-lufga);
+}
+
+
 @layer base {
   * {
     border-color: var(--border);

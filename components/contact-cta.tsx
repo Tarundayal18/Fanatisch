@@ -113,7 +113,7 @@
 //         }}
 //       />
 //       </div>
-      
+
 //     </section>
 //   )
 // }
@@ -143,58 +143,71 @@ export default function ContactCTA({ scrollY }: ContactCTAProps) {
   }, [])
 
   return (
-        <section className=" bg-[#f2cb05]">
+    <section className=" bg-[#f2cb05]">
 
-    <div
-      ref={containerRef}
-      className="relative mx-auto max-w-6xl px-6 py-20 opacity-0 scale-95 transition-all duration-700 bg-[#f2cb05]"
-    >
-      {/* CTA Container */}
-      <div className="relative overflow-visible rounded-[3rem] bg-[#0a1628] px-8 py-16 text-center md:px-16 border border-[#1f2a3c] shadow-2xl bg-[#4744a6]">
-        
-        {/* Top Left Shape */}
-        <div className="absolute -top-16 -left-16 w-40 h-40 bg-[#f12d3d] rounded-[2rem] rotate-45" />
-        
-        {/* Top Right Shape */}
-        <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#f12d3d] rounded-[2rem] -rotate-12" />
+      <div
+        ref={containerRef}
+        className="relative mx-auto max-w-6xl px-6 py-20 opacity-0 scale-95 transition-all duration-700 bg-[#f2cb05]"
+      >
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 z-20 bg-white rotate-180"
+          style={{
+            width: "10%",
+            aspectRatio: "2",
+            WebkitMask:
+              "url('https://framerusercontent.com/images/hu1eUWnLUAIjJFEcHS6XHGyNUQ.svg?width=180&height=90') center / cover no-repeat",
+            mask: "url('https://framerusercontent.com/images/hu1eUWnLUAIjJFEcHS6XHGyNUQ.svg?width=180&height=90') center / cover no-repeat",
+          }}
+        />
 
-        {/* Heading */}
-        <h2 className="relative z-10 mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-          <span className="text-white">Ready to partner with </span>
-          <span className="text-purple-400">Revento</span>
-          <span className="text-white"> & Unlock the </span>
-          <span className="relative inline-block">
-            <span className="text-orange-400">Real</span>
-            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-orange-400 rounded-full"></span>
-          </span>
-          <span className="text-white"> Potential?</span>
-        </h2>
 
-        {/* Subtitle */}
-        <p className="relative z-10 mx-auto mb-8 max-w-2xl text-lg text-gray-300 md:text-xl">
-          Let's transform your vision into measurable impact through proven
-          strategies and dedicated partnership.
-        </p>
+        {/* CTA Container */}
+        <div className="relative overflow-visible rounded-[3rem] bg-[#0a1628] px-8 py-16 text-center md:px-16 border border-[#1f2a3c] shadow-2xl bg-[#4744a6]">
 
-        {/* Button */}
-        <button className="group relative inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[#0a1628] transition-all hover:bg-gray-100 hover:scale-105">
-          Get In Touch
-          <svg
-            className="h-5 w-5 transition-transform group-hover:translate-x-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
+
+          {/* Top Left Shape */}
+          <div className="absolute -top-16 -left-16 w-40 h-40 bg-[#f12d3d] rounded-[2rem] rotate-45" />
+
+          {/* Top Right Shape */}
+          <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#f12d3d] rounded-[2rem] -rotate-12" />
+
+          {/* Heading */}
+          <h2 className="relative z-10 mb-6 text-4xl font-lufga font-bold leading-tight md:text-5xl lg:text-6xl">
+            <span className="text-white">Ready to partner with </span>
+            <span className="text-purple-400">Revento</span>
+            <span className="text-white"> & Unlock the </span>
+            <span className="relative inline-block">
+              <span className="text-orange-400">Real</span>
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-orange-400 rounded-full"></span>
+            </span>
+            <span className="text-white"> Potential?</span>
+          </h2>
+
+          {/* Subtitle */}
+          <p className="relative z-10 mx-auto mb-8 max-w-2xl text-lg font-lufga font-regular text-gray-300 md:text-xl">
+            Let's transform your vision into measurable impact through proven
+            strategies and dedicated partnership.
+          </p>
+
+          {/* Button */}
+          <button className="group relative inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-lufga font-semibold text-[#0a1628] transition-all hover:bg-gray-100 hover:scale-105">
+            Get In Touch
+            <svg
+              className="h-5 w-5 transition-transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
     </section >
   )
 }

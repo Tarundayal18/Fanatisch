@@ -90,10 +90,10 @@ export default function WhatWeOffer({ scrollY }: WhatWeOfferProps) {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-[#0e0f26]">
+          <h2 className="text-4xl sm:text-5xl font-lufga font-extrabold tracking-tight mb-4 text-[#0e0f26]">
             What We <span className="text-fanatisch-yellow">Bring</span>
           </h2>
-          <p className="text-[#0e0f26] text-lg max-w-2xl mx-auto">
+          <p className="text-[#0e0f26] font-lufga font-regular text-lg max-w-2xl mx-auto">
             Six core capabilities that drive exceptional results for every brand partnership
           </p>
         </div>
@@ -124,10 +124,10 @@ export default function WhatWeOffer({ scrollY }: WhatWeOfferProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="relative text-xl sm:text-2xl font-bold mb-3 text-[#0e0f26] group-hover:text-fanatisch-yellow transition-colors duration-300">
+                <h3 className="relative text-xl sm:text-2xl font-lufga font-bold mb-3 text-[#0e0f26] group-hover:text-fanatisch-yellow transition-colors duration-300">
                   {benefit.title}
                 </h3>
-                <p className="relative text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="relative text-gray-600 leading-relaxed group-hover:text-gray-700 font-lufga font-regular transition-colors duration-300">
                   {benefit.description}
                 </p>
 
