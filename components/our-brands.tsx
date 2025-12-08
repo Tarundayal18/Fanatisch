@@ -292,6 +292,7 @@ interface Benefit {
   title: string
   description: string
   icon: string
+  link: string 
 }
 
 const benefits: Benefit[] = [
@@ -305,7 +306,7 @@ const benefits: Benefit[] = [
     title: "Basil",
     description: "Retail-first inventory, POS & commerce engine",
     icon: "/basil.png",
-    link: "",
+    link: "https://fanatisch.vercel.app/",
   },
   {
     title: "FdMS",
