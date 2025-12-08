@@ -285,7 +285,7 @@
 
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState  } from "react"
 import Image from "next/image"
 
 interface Benefit {
@@ -299,21 +299,25 @@ const benefits: Benefit[] = [
     title: "ZapMenus",
     description: "Smart QR based menu and customer management systems",
     icon: "/zapmenus.png",
+    link: "https://zapmenus.com",
   },
   {
     title: "Basil",
     description: "Retail-first inventory, POS & commerce engine",
     icon: "/basil.png",
+    link: "",
   },
   {
     title: "FdMS",
     description: "Fanatisch digital Marketing Services",
     icon: "/fdms.png",
+    link: "https://www.fdms.co.in/",
   },
   {
     title: "BlueBerrie",
     description: "A Consortium of Consultants",
     icon: "/blueberrie.png",
+    link: "https://www.blueberrie.co.in/",
   },
 ]
 
@@ -747,15 +751,29 @@ function BenefitCard({ benefit, index, isVisible, isHovered, onHover, onLeave }:
 
           <div className="pt-4 border-t border-blue-600/20 group-hover:border-red-500/50 transition-colors duration-300">
             <div className="flex items-center text-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 font-lufga font-semibold">
-              <span className="text-sm">Learn More</span>
-              <svg
-                className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              <a
+  href={benefit.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center text-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 font-lufga font-semibold"
+>
+  <span className="text-sm">Learn More</span>
+  <svg
+    className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 5l7 7-7 7"
+    />
+  </svg>
+</a>
+
+             
             </div>
           </div>
         </div>
