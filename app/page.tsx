@@ -21,7 +21,7 @@ export default function Home() {
     <main className="bg-fanatisch-dark text-white overflow-hidden">
       <HeroSection scrollY={scrollY} />
       <WhatWeOffer scrollY={scrollY} />
-      <OurBrands />
+      <OurBrands scrollY={scrollY} />
        <HowItWorks scrollY={scrollY} />
        <ShowcaseSlider />
       <ContactCTA scrollY={scrollY} />

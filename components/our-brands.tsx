@@ -506,7 +506,7 @@
 
 "use client"
 
-import { useEffect, useRef, useState, memo } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
 interface Benefit {
@@ -540,12 +540,12 @@ const benefits: Benefit[] = [
   {
     title: "BlueBerrie",
     description: "A Consortium of Consultants",
-    icon: "/blueberrie.png",
+    icon: "/blueberrie01.png",
     link: "https://www.blueberrie.co.in/",
   },
 ]
 
-export default function CoreBenefits() {
+export default function CoreBenefits({ scrollY }: { scrollY: number }) {
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -554,18 +554,27 @@ export default function CoreBenefits() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.disconnect()
         }
       },
-      { threshold: 0.2, rootMargin: '50px' }
+      { threshold: 0.1 }
     )
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
+    const current = containerRef.current
+    if (current) {
+      observer.observe(current)
     }
 
-    return () => observer.disconnect()
+    return () => {
+      if (current) {
+        observer.unobserve(current)
+      }
+    }
   }, [])
+
+  const handleCardClick = (benefit: Benefit) => {
+    if (benefit.comingSoon) return
+    window.open(benefit.link, '_blank', 'noopener,noreferrer')
+  }
 
   return (
     <section
@@ -584,17 +593,15 @@ export default function CoreBenefits() {
         }}
       />
 
-      {/* Background Effects */}
+      {/* Simplified Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/5" />
-        <div className="absolute top-32 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl opacity-60" />
-        <div className="absolute bottom-32 left-20 w-96 h-96 bg-white/8 rounded-full blur-3xl opacity-60" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-20 space-y-6">
-          <div className="inline-block px-6 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-sm sm:text-base font-lufga font-semibold tracking-widest text-gray-900 uppercase shadow-lg transition-colors duration-300 hover:bg-white/50">
+          <div className="inline-block px-6 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-sm sm:text-base font-lufga font-semibold tracking-widest text-gray-900 uppercase shadow-lg">
             Core Benefits
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-lufga font-bold text-gray-900 leading-tight">
@@ -615,27 +622,119 @@ export default function CoreBenefits() {
             {/* Top Row */}
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 justify-center">
               {benefits.slice(0, 2).map((benefit, index) => (
-                <BenefitCard
+                <div
                   key={benefit.title}
-                  benefit={benefit}
-                  index={index}
-                  isVisible={isVisible}
-                />
+                  className={`transition-opacity duration-700 ${
+                    isVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div 
+                    className={`group relative bg-white border-2 border-blue-600/20 rounded-3xl p-8 w-full sm:w-96 shadow-lg ${
+                      !benefit.comingSoon 
+                        ? 'cursor-pointer active:scale-95' 
+                        : 'cursor-default'
+                    }`}
+                    onClick={() => handleCardClick(benefit)}
+                  >
+                    <div className="space-y-6">
+                      <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl shadow-md">
+                        <Image
+                          src={benefit.icon}
+                          alt={benefit.title}
+                          width={64}
+                          height={64}
+                          className="object-contain"
+                          priority={index < 2}
+                        />
+                      </div>
+
+                      <h3 className="text-2xl font-lufga font-bold text-gray-900 leading-tight">
+                        {benefit.title}
+                      </h3>
+
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-lufga font-medium">
+                        {benefit.description}
+                      </p>
+
+                      <div className="pt-4 border-t border-blue-600/20">
+                        {benefit.comingSoon ? (
+                          <span className="text-sm text-gray-500 font-lufga font-semibold">Coming Soon</span>
+                        ) : (
+                          <span className="text-sm text-blue-600 font-lufga font-semibold">Learn More →</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
 
             {/* Center Icon */}
-            <CenterCircle isVisible={isVisible} />
+            <div className="relative flex justify-center py-8">
+              <div className={`transition-all duration-700 ${isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-[#4744a6] via-[#6a5bcc] to-[#f12d3d] flex items-center justify-center text-white shadow-2xl">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
 
             {/* Bottom Row */}
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 justify-center">
               {benefits.slice(2, 4).map((benefit, index) => (
-                <BenefitCard
+                <div
                   key={benefit.title}
-                  benefit={benefit}
-                  index={index + 2}
-                  isVisible={isVisible}
-                />
+                  className={`transition-opacity duration-700 ${
+                    isVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${(index + 2) * 150}ms` }}
+                >
+                  <div 
+                    className={`group relative bg-white border-2 border-blue-600/20 rounded-3xl p-8 w-full sm:w-96 shadow-lg ${
+                      !benefit.comingSoon 
+                        ? 'cursor-pointer active:scale-95' 
+                        : 'cursor-default'
+                    }`}
+                    onClick={() => handleCardClick(benefit)}
+                  >
+                    <div className="space-y-6">
+                      <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl shadow-md">
+                        <Image
+                          src={benefit.icon}
+                          alt={benefit.title}
+                          width={64}
+                          height={64}
+                          className="object-contain"
+                          priority={index + 2 < 2}
+                        />
+                      </div>
+
+                      <h3 className="text-2xl font-lufga font-bold text-gray-900 leading-tight">
+                        {benefit.title}
+                      </h3>
+
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-lufga font-medium">
+                        {benefit.description}
+                      </p>
+
+                      <div className="pt-4 border-t border-blue-600/20">
+                        {benefit.comingSoon ? (
+                          <span className="text-sm text-gray-500 font-lufga font-semibold">Coming Soon</span>
+                        ) : (
+                          <span className="text-sm text-blue-600 font-lufga font-semibold">Learn More →</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -654,139 +753,82 @@ export default function CoreBenefits() {
 
           {/* Center Circle */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <CenterCircle isVisible={isVisible} />
+            <div className={`transition-all duration-700 ${isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
+              <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-[#4744a6] via-[#6a5bcc] to-[#f12d3d] flex items-center justify-center text-white shadow-2xl">
+                <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
 
           {/* Benefit Cards */}
-          <div className="absolute top-0 left-0 pl-4 pt-4">
-            <BenefitCard benefit={benefits[0]} index={0} isVisible={isVisible} />
-          </div>
-          <div className="absolute top-0 right-0 pr-4 pt-4">
-            <BenefitCard benefit={benefits[1]} index={1} isVisible={isVisible} />
-          </div>
-          <div className="absolute bottom-0 right-0 pr-4 pb-4">
-            <BenefitCard benefit={benefits[3]} index={3} isVisible={isVisible} />
-          </div>
-          <div className="absolute bottom-0 left-0 pl-4 pb-4">
-            <BenefitCard benefit={benefits[2]} index={2} isVisible={isVisible} />
-          </div>
+          {benefits.map((benefit, index) => {
+            const positions = [
+              "top-0 left-0 pl-4 pt-4",
+              "top-0 right-0 pr-4 pt-4", 
+              "bottom-0 left-0 pl-4 pb-4",
+              "bottom-0 right-0 pr-4 pb-4"
+            ]
+            
+            return (
+              <div 
+                key={benefit.title}
+                className={`absolute ${positions[index]}`}
+              >
+                <div
+                  className={`transition-opacity duration-700 ${
+                    isVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div 
+                    className={`group relative bg-white border-2 border-blue-600/20 rounded-3xl p-8 w-96 shadow-lg hover:border-blue-600/50 hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 ${
+                      !benefit.comingSoon ? 'cursor-pointer' : 'cursor-default'
+                    }`}
+                    onClick={() => handleCardClick(benefit)}
+                  >
+                    <div className="space-y-6">
+                      <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                        <Image
+                          src={benefit.icon}
+                          alt={benefit.title}
+                          width={64}
+                          height={64}
+                          className="object-contain"
+                          priority={index < 2}
+                        />
+                      </div>
+
+                      <h3 className="text-2xl font-lufga font-bold text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-red-600 transition-all duration-300 leading-tight">
+                        {benefit.title}
+                      </h3>
+
+                      <p className="text-base text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 font-lufga font-medium">
+                        {benefit.description}
+                      </p>
+
+                      <div className="pt-4 border-t border-blue-600/20 group-hover:border-red-500/50 transition-colors duration-300">
+                        {benefit.comingSoon ? (
+                          <span className="text-sm text-gray-500 font-lufga font-semibold">Coming Soon</span>
+                        ) : (
+                          <span className="text-sm text-blue-600 font-lufga font-semibold group-hover:translate-x-1 inline-block transition-transform duration-300">Learn More →</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
   )
 }
-
-const CenterCircle = memo(({ isVisible }: { isVisible: boolean }) => {
-  return (
-    <div className="relative flex justify-center py-8">
-      <div
-        className={`transition-all duration-700 ${
-          isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
-        }`}
-      >
-        {/* Glow background */}
-        <div className="absolute -inset-4 w-36 h-36 rounded-full bg-gradient-to-br from-[#4744a6]/25 to-[#f12d3d]/25 blur-2xl animate-pulse" />
-
-        {/* Main circle */}
-        <div
-          className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-[#4744a6] via-[#6a5bcc] to-[#f12d3d] flex items-center justify-center text-white shadow-2xl"
-          style={{
-            boxShadow: isVisible
-              ? "0 0 35px rgba(71, 68, 166, 0.6), 0 0 60px rgba(241, 45, 61, 0.3), inset 0 0 20px rgba(255,255,255,0.1)"
-              : "none",
-          }}
-        >
-          <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M13 5l7 7-7 7M5 5l7 7-7 7"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-  )
-})
-
-CenterCircle.displayName = "CenterCircle"
-
-interface BenefitCardProps {
-  benefit: Benefit
-  index: number
-  isVisible: boolean
-}
-
-const BenefitCard = memo(({ benefit, index, isVisible }: BenefitCardProps) => {
-  const handleCardClick = () => {
-    if (benefit.comingSoon) return
-    window.open(benefit.link, '_blank', 'noopener,noreferrer')
-  }
-
-  return (
-    <div
-      className={`transition-all duration-500 ${
-        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-      }`}
-      style={{
-        transitionDelay: `${index * 100}ms`,
-      }}
-    >
-      <div 
-        className={`group relative bg-white backdrop-blur-xl border-2 border-blue-600/20 rounded-3xl p-8 w-full sm:w-96 transition-all duration-300 overflow-hidden shadow-lg ${
-          !benefit.comingSoon 
-            ? 'cursor-pointer active:scale-[0.98] md:hover:border-blue-600/50 md:hover:shadow-2xl md:hover:shadow-blue-600/30' 
-            : 'cursor-default'
-        }`}
-        onClick={handleCardClick}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-white/0 to-red-50/0 md:group-hover:from-blue-50/40 md:group-hover:via-white/30 md:group-hover:to-red-50/40 transition-all duration-500 rounded-3xl pointer-events-none" />
-
-        <div className="relative z-10 space-y-6">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl shadow-lg md:group-hover:scale-110 md:group-hover:shadow-xl md:group-hover:shadow-blue-600/50 transition-all duration-300 md:group-hover:rotate-6">
-            <Image
-              src={benefit.icon}
-              alt={benefit.title}
-              width={64}
-              height={64}
-              className="object-contain"
-              loading="lazy"
-            />
-          </div>
-
-          <h3 className="text-2xl font-lufga font-bold text-gray-900 md:group-hover:text-transparent md:group-hover:bg-clip-text md:group-hover:bg-gradient-to-r md:group-hover:from-blue-600 md:group-hover:to-red-600 transition-all duration-300 leading-tight">
-            {benefit.title}
-          </h3>
-
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed md:group-hover:text-gray-800 transition-colors duration-300 font-lufga font-medium">
-            {benefit.description}
-          </p>
-
-          <div className="pt-4 border-t border-blue-600/20 md:group-hover:border-red-500/50 transition-colors duration-300">
-            {benefit.comingSoon ? (
-              <div className="flex items-center text-gray-500 opacity-0 md:group-hover:opacity-100 transition-all duration-300 translate-y-2 md:group-hover:translate-y-0 font-lufga font-semibold cursor-default">
-                <span className="text-sm">Coming Soon</span>
-              </div>
-            ) : (
-              <div className="flex items-center text-blue-600 opacity-0 md:group-hover:opacity-100 transition-all duration-300 translate-y-2 md:group-hover:translate-y-0 font-lufga font-semibold pointer-events-none">
-                <span className="text-sm">Learn More</span>
-                <svg
-                  className="w-4 h-4 ml-2 md:group-hover:translate-x-2 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-})
-
-BenefitCard.displayName = "BenefitCard"
