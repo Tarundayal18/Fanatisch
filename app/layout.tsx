@@ -90,9 +90,9 @@ const lufga = localFont({
 
 
 export const metadata: Metadata = {
-  title: "Fanatisch",
+  title: "Fanatisch | Premium Web Design, UI/UX Strategy & Digital Innovation",
   description:
-    "Proven multi-brand strategies, rapid execution, and founder partnership for global brand domination.",
+    "Fanatisch delivers premium web design and UI/UX solutions engineered for performance and aesthetics. Discover clean layouts, modern interfaces, and innovative digital experiences.",
   generator: "v0.app",
   icons: {
     icon: [
