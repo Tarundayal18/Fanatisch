@@ -286,6 +286,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 interface Benefit {
   title: string
@@ -297,24 +298,25 @@ const benefits: Benefit[] = [
   {
     title: "ZapMenus",
     description: "Smart QR based menu and customer management systems",
-    icon: "🚀",
+    icon: "/zapmenus.png",
   },
   {
     title: "Basil",
     description: "Retail-first inventory, POS & commerce engine",
-    icon: "⚡",
+    icon: "/basil.png",
   },
   {
     title: "FdMS",
     description: "Fanatisch digital Marketing Services",
-    icon: "✨",
+    icon: "/fdms.png",
   },
   {
     title: "BlueBerrie",
     description: "A Consortium of Consultants",
-    icon: "🎯",
+    icon: "/blueberrie.png",
   },
 ]
+
 
 export default function CoreBenefits() {
   const [isVisible, setIsVisible] = useState(false)
@@ -725,9 +727,15 @@ function BenefitCard({ benefit, index, isVisible, isHovered, onHover, onLeave }:
         )}
 
         <div className="relative z-10 space-y-6">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-500 to-red-500 text-3xl shadow-lg group-hover:scale-125 group-hover:shadow-xl group-hover:shadow-blue-600/50 transition-all duration-300 group-hover:rotate-12">
-            {benefit.icon}
-          </div>
+         <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-300 via-blue-300 to-red-300 shadow-lg group-hover:scale-125 group-hover:shadow-xl group-hover:shadow-blue-600/50 transition-all duration-300 group-hover:rotate-12">
+  <Image
+    src={benefit.icon}
+    alt={benefit.title}
+    width={64}
+    height={64}
+    className="object-contain"
+  />
+</div>
 
           <h3 className="text-2xl sm:text-2xl font-lufga font-bold text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-red-600 transition-all duration-300 leading-tight">
             {benefit.title}
