@@ -296,7 +296,7 @@ interface Benefit {
 const benefits: Benefit[] = [
   {
     title: "ZapMenus",
-    description: "Smart menu systems for restaurants",
+    description: "Smart QR based menu and customer management systems",
     icon: "🚀",
   },
   {
