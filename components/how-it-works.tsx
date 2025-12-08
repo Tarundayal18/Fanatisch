@@ -134,7 +134,7 @@ export default function HowItWorks({ scrollY }: HowItWorksProps) {
     >
       <div
         ref={containerRef}
-        className="max-w-7xl mx-auto opacity-0 translate-y-8 transition-all duration-700 mb-10"
+        className="max-w-7xl mx-auto opacity-0 translate-y-8 transition-all duration-700"
       >
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-lufga font-bold text-gray-900 mb-20 text-center leading-tight max-w-5xl mx-auto">
           How Fanatisch{" "}
@@ -143,12 +143,12 @@ export default function HowItWorks({ scrollY }: HowItWorksProps) {
           </span>
         </h2>
 
-        <div className="relative bg-gradient-to-r from-blue-100 to-blue-50 rounded-full p-8 md:p-12 lg:p-16 shadow-lg">
+        <div className="relative bg-gradient-to-r from-blue-100 to-blue-50 rounded-full p-8 md:p-12 lg:p-16 shadow-lg mb-20">
           {/* Decorative curved side elements */}
           {/* <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-32 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full"></div> */}
           {/* <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-32 bg-gradient-to-r from-blue-50 to-blue-100 rounded-full"></div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, idx) => (
               <div
                 key={idx}

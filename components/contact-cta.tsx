@@ -174,7 +174,7 @@ export default function ContactCTA({ scrollY }: ContactCTAProps) {
           {/* Heading */}
           <h2 className="relative z-10 mb-6 text-4xl font-lufga font-bold leading-tight md:text-5xl lg:text-6xl">
             <span className="text-white">Ready to partner with </span>
-            <span className="text-purple-400">Revento</span>
+            <span className="text-purple-400">Fanatisch</span>
             <span className="text-white"> & Unlock the </span>
             <span className="relative inline-block">
               <span className="text-orange-400">Real</span>
@@ -182,12 +182,13 @@ export default function ContactCTA({ scrollY }: ContactCTAProps) {
             </span>
             <span className="text-white"> Potential?</span>
           </h2>
+          <br />
 
           {/* Subtitle */}
-          <p className="relative z-10 mx-auto mb-8 max-w-2xl text-lg font-lufga font-regular text-gray-300 md:text-xl">
+          {/* <p className="relative z-10 mx-auto mb-8 max-w-2xl text-lg font-lufga font-regular text-gray-300 md:text-xl">
             Let's transform your vision into measurable impact through proven
             strategies and dedicated partnership.
-          </p>
+          </p> */}
 
           {/* Button */}
           <button className="group relative inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-lufga font-semibold text-[#0a1628] transition-all hover:bg-gray-100 hover:scale-105">

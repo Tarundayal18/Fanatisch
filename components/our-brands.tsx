@@ -295,23 +295,23 @@ interface Benefit {
 
 const benefits: Benefit[] = [
   {
-    title: "Unified Data Management",
-    description: "Stop digging spreadsheets — Datacore instantly translates data into meaningful.",
+    title: "ZapMenus",
+    description: "Smart menu systems for restaurants",
     icon: "🚀",
   },
   {
-    title: "Smart Data Sorting",
-    description: "No more manual cleanup — our system structures raw data for fast insights.",
+    title: "Basil",
+    description: "Retail-first inventory, POS & commerce engine",
     icon: "⚡",
   },
   {
-    title: "Instant Data Clarity",
-    description: "Say goodbye to chaos — we turn complex data into organized, useful information.",
+    title: "FdMS",
+    description: "Fanatisch digital Marketing Services",
     icon: "✨",
   },
   {
-    title: "One-Click Data Cleanse",
-    description: "Stop wasting time — our tool makes messy spreadsheets neat and analysis-ready fast.",
+    title: "BlueBerrie",
+    description: "A Consortium of Consultants",
     icon: "🎯",
   },
 ]

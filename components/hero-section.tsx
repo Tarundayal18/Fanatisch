@@ -145,7 +145,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#f2cb05]"
     >
       {/* Animated background elements */}
-      
+
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#4744a6]/10 blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-[#f12d3d]/10 blur-3xl animate-pulse delay-700" />
@@ -154,37 +154,37 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <div className="space-y-8">
-          {/* ⭐ Top Center Logo */}
-          <div className="w-full flex justify-center mb-4">
-            <div className="relative w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56">
-              <Image src="/Logo/mainlogo.png" alt="Main Logo" fill className="object-contain" />
-            </div>
-          </div>
-
-          <div className="space-y-6 relative">
-           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[0.95]">
-  <span className="block font-lufga font-bold text-[#0e0f26]">TRANSFORMING</span>
-  <span className="text-[#4744a6] font-lufga font-bold">VISION INTO</span>
-  <span className="text-[#f12d3d] font-lufga font-bold"> REVENUE</span>
-  <br />
-  <span className="text-[#0e0f26] mt-3 inline-block font-lufga font-bold">EFFECTIVELY</span>
-</h1>
-
-          </div>
-
-          <p className="text-lg sm:text-xl text-[#0e0f26] max-w-2xl mx-auto font-lufga font-bold leading-relaxed">
-            Experience growth through innovative strategies, rapid execution, and unwavering founder partnership.
-          </p>
-
-          <div className="pt-4 mb-[100px]">
-            <button className="relative group px-8 py-4 bg-[#0e0f26] text-white font-lufga font-bold rounded-full text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-[#0e0f26]/50">
-              Get In Touch
-              <span className="absolute inset-0 rounded-full bg-[#0e0f26] opacity-0 group-hover:opacity-20 blur transition-opacity" />
-            </button>
-          </div>
-        </div>
+  <div className="space-y-2"> {/* aur tight gap */}
+    {/* ⭐ Top Center Logo */}
+    <div className="w-full flex justify-center">
+      <div className="relative w-58 h-70 md:w-80 md:h-58 lg:w-70 lg:h-80">
+        <Image src="/Logo/mainlogo.png" alt="Main Logo" fill className="object-contain" />
       </div>
+    </div>
+
+    <div className="space-y-1 relative"> {/* Heading ke andar bhi gap kam */}
+      <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[0.95]">
+        <span className="block font-lufga font-bold text-[#0e0f26]">TRANSFORMING</span>
+        <span className="text-[#4744a6] font-lufga font-bold">VISION INTO</span>
+        <span className="text-[#f12d3d] font-lufga font-bold"> REVENUE</span>
+        <br />
+        <span className="text-[#0e0f26] mt-1 inline-block font-lufga font-bold">EFFECTIVELY</span> {/* mt-2 → mt-1 */}
+      </h1>
+    </div>
+
+    <p className="text-lg sm:text-xl text-[#0e0f26] max-w-2xl mx-auto font-lufga font-bold leading-relaxed">
+      Experience growth through innovative strategies, rapid execution, and unwavering founder partnership.
+    </p>
+
+    <div className="pt-4 mb-[100px]">
+      <button className="relative group px-8 py-4 bg-[#0e0f26] text-white font-lufga font-bold rounded-full text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-[#0e0f26]/50">
+        Get In Touch
+        <span className="absolute inset-0 rounded-full bg-[#0e0f26] opacity-0 group-hover:opacity-20 blur transition-opacity" />
+      </button>
+    </div>
+  </div>
+</div>
+
 
       {/* Floating symbols */}
       <div
