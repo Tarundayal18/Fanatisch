@@ -1,4 +1,5 @@
 
+
 "use client"
 
 import { useEffect, useRef, useState } from "react"
@@ -40,7 +41,7 @@ const benefits: Benefit[] = [
   },
 ]
 
-export default function OurBrands({ scrollY }: { scrollY: number }) {
+export default function CoreBenefits({ scrollY }: { scrollY: number }) {
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -93,7 +94,45 @@ export default function OurBrands({ scrollY }: { scrollY: number }) {
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/5" />
       </div>
 
-      
+      {/* Add Custom CSS for Enhanced Gradient Glow Animation */}
+      <style jsx>{`
+        @keyframes gradientGlow {
+          0%, 100% {
+            box-shadow: 
+              0 0 30px rgba(59, 130, 246, 0.8),
+              0 0 60px rgba(59, 130, 246, 0.6),
+              0 0 90px rgba(59, 130, 246, 0.4),
+              0 0 120px rgba(59, 130, 246, 0.2);
+          }
+          25% {
+            box-shadow: 
+              0 0 30px rgba(147, 51, 234, 0.8),
+              0 0 60px rgba(147, 51, 234, 0.6),
+              0 0 90px rgba(147, 51, 234, 0.4),
+              0 0 120px rgba(147, 51, 234, 0.2);
+          }
+          50% {
+            box-shadow: 
+              0 0 30px rgba(239, 68, 68, 0.8),
+              0 0 60px rgba(239, 68, 68, 0.6),
+              0 0 90px rgba(239, 68, 68, 0.4),
+              0 0 120px rgba(239, 68, 68, 0.2);
+          }
+          75% {
+            box-shadow: 
+              0 0 30px rgba(147, 51, 234, 0.8),
+              0 0 60px rgba(147, 51, 234, 0.6),
+              0 0 90px rgba(147, 51, 234, 0.4),
+              0 0 120px rgba(147, 51, 234, 0.2);
+          }
+        }
+        
+        .gradient-glow-circle {
+          animation: gradientGlow 4s ease-in-out infinite;
+          background: white;
+        }
+      `}</style>
+
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-20 space-y-6">
@@ -165,7 +204,7 @@ export default function OurBrands({ scrollY }: { scrollY: number }) {
               <div
                 className={`transition-all duration-700 ${isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
               >
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white flex items-center justify-center border-4 border-blue-600/20 shadow-2xl animate-pulse">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white flex items-center justify-center border-4 border-blue-600/20 gradient-glow-circle">
                   <Image src="/F.png" alt="Fanatisch" width={48} height={48} className="object-contain" />
                 </div>
               </div>
@@ -232,7 +271,7 @@ export default function OurBrands({ scrollY }: { scrollY: number }) {
           {/* Center Circle */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
             <div className={`transition-all duration-700 ${isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-              <div className="relative w-32 h-32 rounded-full bg-white flex items-center justify-center border-4 border-blue-600/20 shadow-2xl animate-pulse">
+              <div className="relative w-32 h-32 rounded-full bg-white flex items-center justify-center border-4 border-blue-600/20 gradient-glow-circle">
                 <Image src="/F.png" alt="Fanatisch" width={64} height={64} className="object-contain" />
               </div>
             </div>
