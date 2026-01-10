@@ -225,23 +225,6 @@ interface SlideItem {
 
 const allSlides: SlideItem[] = [
   {
-    id: "thinkster-1",
-    category: "Thinkster Expertise",
-    leftTitle: "PROVEN EXPERTISE",
-    leftDescription:
-      "With years of experience and a track record of delivering measurable results, we craft strategies that work.",
-    leftStatNumber: "300+",
-    leftStatText1: "Successful Campaigns",
-    leftStatText2: "Launched Industries",
-    rightTitle: "DATA-DRIVEN APPROACH",
-    rightDescription: "Using proven techniques, we build strategies that drive measurable outcomes.",
-    rightStatNumber: "200%",
-    rightStatText: "Growth in Conversion Rates on Average",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop",
-    heading: "Thinkster",
-    headingHighlight: "Expertise"
-  },
-  {
     id: "lot-1",
     category: "Little Other Things",
     leftTitle: "ATTENTION TO DETAIL",
@@ -254,7 +237,7 @@ const allSlides: SlideItem[] = [
     rightDescription: "Each client receives customized solutions tailored to their unique needs and goals.",
     rightStatNumber: "24/7",
     rightStatText: "Customer Support Available",
-    image: "/img1.avif",
+    image: "/img1.jpg",
     heading: "Little Other",
     headingHighlight: "Things"
   },
@@ -398,7 +381,7 @@ export default function ShowcaseSlider() {
         </div>
 
         {/* Navigation Controls */}
-        <div className="flex flex-col items-center gap-8 mt-16">
+        {/* <div className="flex flex-col items-center gap-8 mt-16">
           <div className="flex justify-center gap-6">
             <button
               onClick={handlePrev}
@@ -416,7 +399,6 @@ export default function ShowcaseSlider() {
             </button>
           </div>
 
-          {/* Slide indicators */}
           <div className="flex justify-center gap-3">
             {allSlides.map((_, index) => (
               <button
@@ -431,7 +413,7 @@ export default function ShowcaseSlider() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
