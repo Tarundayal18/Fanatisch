@@ -286,23 +286,23 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
             </div>
 
             <div className="space-y-1 relative">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[0.95]">
-                <span className="block font-lufga font-bold text-[#0e0f26]">TRANSFORMING</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-[0.95]">
+                <span className="block font-lufga font-bold text-[#6c0505]">TRANSFORMING</span>
                 <span className="text-[#4744a6] font-lufga font-bold">VISION INTO</span>
                 <span className="text-[#f12d3d] font-lufga font-bold"> REVENUE</span>
                 <br />
-                <span className="text-[#0e0f26] mt-1 inline-block font-lufga font-bold">EFFECTIVELY</span>
+                <span className="text-[#6c0505] mt-1 inline-block font-lufga font-bold">EFFECTIVELY</span>
               </h1>
             </div>
 
-            <p className="text-lg sm:text-xl text-[#0e0f26] max-w-2xl mx-auto font-lufga font-bold leading-relaxed">
+            <p className="text-lg sm:text-xl text-[#6c0505] max-w-2xl mx-auto font-lufga font-bold leading-relaxed">
               Experience growth through innovative strategies, rapid execution, and unwavering founder partnership.
             </p>
 
             <div className="pt-4 mb-[100px]">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="relative group px-8 py-4 bg-[#0e0f26] text-white font-lufga font-bold rounded-full text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-[#0e0f26]/50"
+                className="relative group px-8 py-4 bg-[#070756] text-white font-lufga font-bold rounded-full text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-[#0e0f26]/50"
               >
                 Get In Touch
                 <span className="absolute inset-0 rounded-full bg-[#0e0f26] opacity-0 group-hover:opacity-20 blur transition-opacity" />

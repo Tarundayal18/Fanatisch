@@ -82,7 +82,7 @@
 //         <div className="text-center mb-18 py-6">
 //   <h3 className="
    
-//     text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#4744a6] mb-3 
+//     text-5xl sm:text-6xl lg:text-7xl font-[#6c0505] tracking-tight text-[#4744a6] mb-3 
 //   ">
 //     {current.category}
 //   </h3>
@@ -121,8 +121,8 @@
 //             {/* Center Image with Framer Shapes */}
 //             <div className="relative flex justify-center items-center">
 //               {/* Top Framer Shape */}
-//               <div className="absolute -top-4 -left-4 w-16 h-16 bg-black rounded-3xl opacity-50"></div>
-//               <div className="absolute -top-4 -right-4 w-16 h-16 bg-black rounded-3xl opacity-50"></div>
+//               <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#6c0505] rounded-3xl opacity-50"></div>
+//               <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#6c0505] rounded-3xl opacity-50"></div>
 
 //               {/* Main Image Container with Rounded Corners */}
 //               <div className="relative w-full aspect-square max-w-sm">
@@ -133,12 +133,12 @@
 //                 />
 
 //                 {/* Decorative Frames */}
-//                 <div className="absolute inset-0 rounded-3xl border-8 border-black border-opacity-20 pointer-events-none"></div>
+//                 <div className="absolute inset-0 rounded-3xl border-8 border-[#6c0505] border-opacity-20 pointer-events-none"></div>
 //               </div>
 
 //               {/* Bottom Framer Shape */}
-//               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-black rounded-3xl opacity-50"></div>
-//               <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-black rounded-3xl opacity-50"></div>
+//               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#6c0505] rounded-3xl opacity-50"></div>
+//               <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#6c0505] rounded-3xl opacity-50"></div>
 //             </div>
 
 //             {/* Right Content */}
@@ -227,16 +227,16 @@ const allSlides: SlideItem[] = [
   {
     id: "lot-1",
     category: "Little Other Things",
-    leftTitle: "ATTENTION TO DETAIL",
+    leftTitle: "Loved Online. Adored in Stores.",
     leftDescription:
-      "We believe that small details make a big difference. Our meticulous approach ensures quality in every aspect.",
-    leftStatNumber: "100%",
-    leftStatText1: "Quality Assurance",
-    leftStatText2: "Every Project",
-    rightTitle: "PERSONALIZED SERVICE",
-    rightDescription: "Each client receives customized solutions tailored to their unique needs and goals.",
-    rightStatNumber: "24/7",
-    rightStatText: "Customer Support Available",
+      "Cute toys, fun stationery, and everyday essentials that customers can't resist picking up.",
+    leftStatNumber: "Cute Products.",
+    leftStatText1: "Reliable Support.",
+    leftStatText2: "Fast-moving designs with consistent quality and seamless support.",
+    rightTitle: "Open a Little Other Things store in your city.",
+    rightDescription: "Turn cute products into a smart business.",
+    rightStatNumber: "CTA",
+    rightStatText: "https://franchisee.littleotherthings.com/",
     image: "/img1.jpg",
     heading: "Little Other",
     headingHighlight: "Things"
@@ -268,7 +268,7 @@ export default function ShowcaseSlider() {
       <div className="max-w-7xl mx-auto">
         {/* Page Heading */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-lufga font-bold text-gray-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-lufga font-bold text-[#6c0505] leading-tight">
             {current.heading}{" "}
             <span className=" bg-gradient-to-r from-blue-600 via-purple-600 font-lufga font-bold to-red-600 bg-clip-text text-transparent animate-pulse">
               {current.headingHighlight}
@@ -285,10 +285,10 @@ export default function ShowcaseSlider() {
           >
             <div className="space-y-2 flex-1 flex flex-col gap-6 justify-center">
               <div className="text-center md:text-left">
-                <h3 className="text-xl md:text-2xl font-lufga font-extrabold text-black mb-2 leading-tight uppercase tracking-tight">
+                <h3 className="text-xl md:text-2xl font-lufga font-extrabold text-[#6c0505] mb-2 leading-tight uppercase tracking-tight">
                   {current.leftTitle}
                 </h3>
-                <p className="text-xs md:text-sm text-black font-lufga font-regular leading-relaxed">
+                <p className="text-xs md:text-sm text-[#6c0505] font-lufga font-regular leading-relaxed">
                   {current.leftDescription}
                 </p>
               </div>
@@ -334,7 +334,7 @@ export default function ShowcaseSlider() {
     />
 
     {/* Dark border frame */}
-    <div className="absolute inset-0 rounded-[3rem] border-[12px] border-black pointer-events-none"></div>
+    <div className="absolute inset-0 rounded-[3rem] border-[12px] border-[#6c0505] pointer-events-none"></div>
   </div>
 </div>
 
@@ -348,15 +348,15 @@ export default function ShowcaseSlider() {
           >
             <div className="space-y-2 flex-1 flex flex-col justify-end">
               <div className="text-center md:text-left">
-                <h3 className="text-xl md:text-2xl font-lufga font-extrabold text-black mb-2 leading-tight uppercase tracking-tight">
+                <h3 className="text-xl md:text-2xl font-lufga font-extrabold text-[#6c0505] mb-2 leading-tight uppercase tracking-tight">
                   {current.rightTitle}
                 </h3>
-                <p className="text-xs md:text-sm text-black font-lufga font-regular leading-relaxed">
+                <p className="text-xs md:text-sm text-[#6c0505] font-lufga font-regular leading-relaxed">
                   {current.rightDescription}
                 </p>
               </div>
 
-              <div className="group relative">
+              <div className="group relative cursor-pointer" onClick={() => window.open(current.rightStatText, '_blank', 'noopener,noreferrer')}>
                 <div className="bg-[#ff5c5c] rounded-[1.75rem] p-5 md:p-6 text-white relative overflow-visible shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   {/* Top decorative shape */}
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#ff5c5c] rounded-full opacity-40"></div>
@@ -368,7 +368,7 @@ export default function ShowcaseSlider() {
                     <div className="text-4xl md:text-5xl font-lufga font-extrabold mb-2 tracking-tight">
                       {current.rightStatNumber}
                     </div>
-                    <div className="text-xs md:text-sm font-lufga font-medium leading-relaxed">{current.rightStatText}</div>
+                    {/* <div className="text-xs md:text-sm font-lufga font-medium leading-relaxed">{current.rightStatText}</div> */}
                   </div>
 
                   <div className="absolute top-5 right-5 bg-white bg-opacity-25 p-2.5 rounded-full transform group-hover:rotate-45 transition-all duration-300">
@@ -385,14 +385,14 @@ export default function ShowcaseSlider() {
           <div className="flex justify-center gap-6">
             <button
               onClick={handlePrev}
-              className="p-4 rounded-full bg-black text-white hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
+              className="p-4 rounded-full bg-[#6c0505] text-white hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
               aria-label="Previous slide"
             >
               <ChevronLeft size={28} />
             </button>
             <button
               onClick={handleNext}
-              className="p-4 rounded-full bg-black text-white hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
+              className="p-4 rounded-full bg-[#6c0505] text-white hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
               aria-label="Next slide"
             >
               <ChevronRight size={28} />
@@ -406,8 +406,8 @@ export default function ShowcaseSlider() {
                 onClick={() => setCurrentIndex(index)}
                 className={`rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-black w-10 h-3"
-                    : "bg-black bg-opacity-30 w-3 h-3 hover:bg-opacity-50"
+                    ? "bg-[#6c0505] w-10 h-3"
+                    : "bg-[#6c0505] bg-opacity-30 w-3 h-3 hover:bg-opacity-50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

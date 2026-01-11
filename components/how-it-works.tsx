@@ -56,7 +56,7 @@ export default function HowItWorks({ scrollY }: HowItWorksProps) {
         ref={containerRef}
         className="max-w-7xl mx-auto opacity-0 translate-y-8 transition-all duration-700"
       >
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-20 text-center leading-tight max-w-5xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#6c0505] mb-20 text-center leading-tight max-w-5xl mx-auto">
           How Fanatisch{" "}
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 bg-clip-text text-transparent animate-pulse">
             Works
@@ -75,7 +75,7 @@ export default function HowItWorks({ scrollY }: HowItWorksProps) {
                   <div 
                     className="w-20 h-20 rounded-full flex items-center justify-center text-4xl transform group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 shadow-md"
                     style={{
-                      backgroundColor: idx === 0 ? '#4744a6' : idx === 1 ? '#f2cb05' : idx === 2 ? '#0e0f26' : '#22c55e'
+                      backgroundColor: idx === 0 ? '#4744a6' : idx === 1 ? '#f2cb05' : idx === 2 ? '#6c0505' : '#22c55e'
                     }}
                   >
                     <span className="filter brightness-0 invert">{step.icon}</span>
@@ -84,11 +84,11 @@ export default function HowItWorks({ scrollY }: HowItWorksProps) {
                   <div className="absolute inset-0 rounded-full border-2 border-[#4744a6] animate-pulse"></div>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-extrabold text-[#0e0f26] mb-3 tracking-tight">
+                <h3 className="text-lg md:text-xl font-extrabold text-[#6c0505] mb-3 tracking-tight">
                   {step.title}
                 </h3>
 
-                <p className="text-[#0e0f26] text-sm md:text-base leading-relaxed opacity-85">
+                <p className="text-[#070756] text-sm md:text-base leading-relaxed opacity-85">
                   {step.description}
                 </p>
               </div>

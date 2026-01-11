@@ -136,16 +136,16 @@ export default function CoreBenefits({ scrollY }: { scrollY: number }) {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-20 space-y-6">
-          <div className="inline-block px-6 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-sm sm:text-base font-lufga font-semibold tracking-widest text-gray-900 uppercase shadow-lg">
+          <div className="inline-block px-6 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-sm sm:text-base font-lufga font-semibold tracking-widest text-[#6c0505] uppercase shadow-lg">
             Core Benefits
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-lufga font-bold text-gray-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-lufga font-bold text-[#6c0505] leading-tight">
             The Value Behind the{" "}
             <span className="bg-gradient-to-r from-blue-600 font-lufga font-regular via-purple-600 to-red-600 bg-clip-text text-transparent">
               Platform
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-800 max-w-2xl mx-auto leading-relaxed font-lufga font-medium">
+          <p className="text-base sm:text-lg text-[#070756] max-w-2xl mx-auto leading-relaxed font-lufga font-medium">
             Easily track and manage your sales pipeline with real-time updates, visual deal stages to keep your sales
             flow seamless.
           </p>
@@ -180,7 +180,7 @@ export default function CoreBenefits({ scrollY }: { scrollY: number }) {
                         />
                       </div>
 
-                      <h3 className="text-2xl font-lufga font-bold text-gray-900 leading-tight">{benefit.title}</h3>
+                      <h3 className="text-2xl font-lufga font-bold text-[#6c0505] leading-tight">{benefit.title}</h3>
 
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-lufga font-medium">
                         {benefit.description}
@@ -236,7 +236,7 @@ export default function CoreBenefits({ scrollY }: { scrollY: number }) {
                         />
                       </div>
 
-                      <h3 className="text-2xl font-lufga font-bold text-gray-900 leading-tight">{benefit.title}</h3>
+                      <h3 className="text-2xl font-lufga font-bold text-[#6c0505] leading-tight">{benefit.title}</h3>
 
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-lufga font-medium">
                         {benefit.description}
@@ -305,11 +305,11 @@ export default function CoreBenefits({ scrollY }: { scrollY: number }) {
                         />
                       </div>
 
-                      <h3 className="text-xl font-lufga font-bold text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-red-600 transition-all duration-300 leading-tight">
+                      <h3 className="text-xl font-lufga font-bold text-[#6c0505] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-red-600 transition-all duration-300 leading-tight">
                         {benefit.title}
                       </h3>
 
-                      <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 font-lufga font-medium">
+                      <p className="text-sm text-[#070756] leading-relaxed group-hover:text-[#070756] transition-colors duration-300 font-lufga font-medium">
                         {benefit.description}
                       </p>
 
