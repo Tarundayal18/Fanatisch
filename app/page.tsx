@@ -7,6 +7,7 @@ import OurBrands from "@/components/our-brands"
 import HowItWorks from "@/components/how-it-works"
 import ContactCTA from "@/components/contact-cta"
 import ShowcaseSlider from "@/components/showcase-slider"
+import CenterCircleSection from "@/components/centercircle"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -21,7 +22,7 @@ export default function Home() {
     <main className="bg-fanatisch-dark text-white overflow-hidden">
       <HeroSection scrollY={scrollY} />
       <WhatWeOffer scrollY={scrollY} />
-      <OurBrands scrollY={scrollY} />
+      <CenterCircleSection />
        <HowItWorks scrollY={scrollY} />
        <ShowcaseSlider />
       <ContactCTA scrollY={scrollY} />
