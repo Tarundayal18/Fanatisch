@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import HeroSection from "@/components/hero-section"
 import WhatWeOffer from "@/components/what-we-offer"
-import OurBrands from "@/components/our-brands"
+// import OurBrands from "@/components/our-brands"
 import HowItWorks from "@/components/how-it-works"
 import ContactCTA from "@/components/contact-cta"
 import ShowcaseSlider from "@/components/showcase-slider"
