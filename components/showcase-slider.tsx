@@ -72,6 +72,9 @@ export default function ShowcaseSlider() {
               {current.headingHighlight}
             </span>
           </h2>
+          <p className="text-lg sm:text-xl lg:text-2xl font-lufga font-bold text-[#6c0505] mt-4">
+            Our Sister Concerns
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center min-h-[600px] md:min-h-[500px]">
@@ -93,9 +96,9 @@ export default function ShowcaseSlider() {
 
               <div className="group relative">
                 <div className="bg-[#8b7cf6] rounded-[1.75rem] p-5 md:p-6 text-white relative overflow-visible shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#8b7cf6] rounded-full opacity-40"></div>
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#8b7cf6] rounded-full opacity-40 md:-top-3 md:w-12 md:h-12"></div>
                   
-                  <div className="absolute -bottom-5 left-5 w-10 h-10 bg-[#8b7cf6] rounded-full opacity-30"></div>
+                  <div className="absolute -bottom-3 left-3 w-6 h-6 bg-[#8b7cf6] rounded-full opacity-30 md:-bottom-5 md:left-5 md:w-10 md:h-10"></div>
 
                   <div className="relative z-10">
                     <div className="text-2xl md:text-3xl font-lufga font-extrabold mb-2 tracking-tight">
@@ -152,10 +155,10 @@ export default function ShowcaseSlider() {
               <div className="group relative cursor-pointer" onClick={() => window.open(current.rightStatText, '_blank', 'noopener,noreferrer')}>
                 <div className="bg-[#ff5c5c] rounded-[1.75rem] p-5 md:p-6 text-white relative overflow-visible shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   {/* Top decorative shape */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#ff5c5c] rounded-full opacity-40"></div>
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#ff5c5c] rounded-full opacity-40 md:-top-3 md:w-12 md:h-12"></div>
                   
                   {/* Bottom decorative shape */}
-                  <div className="absolute -bottom-5 right-5 w-10 h-10 bg-[#ff5c5c] rounded-full opacity-30"></div>
+                  <div className="absolute -bottom-3 right-3 w-6 h-6 bg-[#ff5c5c] rounded-full opacity-30 md:-bottom-5 md:right-5 md:w-10 md:h-10"></div>
 
                   <div className="relative z-10">
                     <div className="text-2xl md:text-3xl font-lufga font-extrabold mb-2 tracking-tight">
